@@ -302,7 +302,7 @@
                 </tr>
                 <tr>
                     <td class="cjxx-info-title">报名号：</td>
-                    <td class="cjxx-info-content">2014{{rand(11111,99999)}}</td>
+                    <td class="cjxx-info-content">{{$info->apply_code?:'2014'+rand(11111,99999)}}</td>
                 </tr>
                 <tr>
                     <td class="cjxx-info-title">准考证号：</td>

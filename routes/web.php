@@ -24,4 +24,4 @@ Route::get('/', function () {
 Route::get('apply/cjcx', 'Index\IndexController@login');
 ///apply/cjcx/cjcx.do
 Route::any('apply/cjcx/cjcx.do', 'Index\IndexController@score');
-Route::get('/', 'Index\IndexController@login');
+Route::any('apply/cjcx/error','Index\IndexController@errors');

@@ -2,6 +2,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Admin\Actions\Post\CopyInfo;
 use App\Admin\Actions\Post\Replicate;
 use App\Admin\Actions\Post\ScoreDetail;
 use App\Admin\Extensions\Tools\StudentGender;
@@ -29,17 +30,15 @@ class StudentController extends AdminController
     {
         $grid = new Grid(new Student());
         $grid->column('name', __('姓名'));
+        $grid->column('apply_code', __('报名号'));
         $grid->column('id_card', __('身份证'));
         $grid->column('ticket', __('准考证号'));
         $grid->column('effect_at', __('有效查询时间'));
         $grid->column('user.name', __('账户'));
 
-//        $grid->tools(function ($tools) {
-//            $tools->append(new StudentGender());
-//        });
-
         $grid->actions(function ($actions) {
             $actions->add(new ScoreDetail());
+            $actions->add(new CopyInfo());
         });
         // 禁用创建按钮
         $grid->disableCreateButton();
@@ -64,9 +63,6 @@ class StudentController extends AdminController
     protected function detail($id)
     {
         $show = new Show(Student::findOrFail($id));
-
-
-
         return $show;
     }
 

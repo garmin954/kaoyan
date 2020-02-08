@@ -63,6 +63,8 @@ class UsersController extends AdminController
         $show->field('created_at', __('创建时间'));
         $show->field('updated_at', __('更新时间'));
         $show->field('student.name', __('学生名称'));
+        $show->field('student.apply_code', __('报名号'));
+
         $show->field('student.id_card', __('身份证件'));// id_card
         $show->field('student.ticket', __('准考证号'));// ticket
         // province
@@ -88,6 +90,8 @@ class UsersController extends AdminController
         $form->password('password', __('密码'));
         $form->text('remember_token', __('记住token'));
         $form->text('student.name', __('学生名称'));
+        $form->text('student.apply_code', __('报名号'));
+
         $form->text('student.id_card', __('身份证件'));// id_card
         $form->text('student.ticket', __('准考证号'));// ticket
         // province
