@@ -161,16 +161,27 @@ class IndexController extends Controller
             // 如果支持wml和html但是wml在html之前则是移动设备
 
             if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
-
                 return true;
-
             }
-
         }
-
         return false;
-
     }
 
 
+
+    public function tjdx()
+    {
+
+        return view('index/tjdx/index');
+    }
+
+    public function tjlogin()
+    {
+        return view('index/tjdx/login');
+    }
+
+    public function tjscore()
+    {
+        return view('index/tjdx/score');
+    }
 }
