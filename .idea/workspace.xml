@@ -5,6 +5,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Index/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Index/IndexController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index/index/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index/index/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/index/wap/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/index/wap/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,11 +139,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/index/tjdx" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../baoqi" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\code\kaoyan\app\Models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\code\kaoyan\resources\views\index\tjdx" />
       <recent name="D:\code\kaoyan\public\static\tongji" />
@@ -184,6 +189,8 @@
       <workItem from="1580616508085" duration="8346000" />
       <workItem from="1581163864216" duration="1113000" />
       <workItem from="1581241232019" duration="5689000" />
+      <workItem from="1581310209203" duration="8632000" />
+      <workItem from="1581832417206" duration="5413000" />
     </task>
     <servers />
   </component>
@@ -199,18 +206,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="122" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1580475294690" />
-    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1581243016013">
+    <state x="463" y="122" key="FileChooserDialogImpl" timestamp="1581855348751">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581243016013" />
+    <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1581855348751" />
     <state x="451" y="197" key="NewPhpClassDialog" timestamp="1580457650070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="451" y="197" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1580457650070" />
-    <state x="499" y="287" key="NewPhpFileDialog" timestamp="1581241353829">
+    <state x="499" y="287" key="NewPhpFileDialog" timestamp="1581312432855">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="499" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1581241353829" />
+    <state x="499" y="287" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1581312432855" />
     <state x="138" y="13" key="SettingsEditor" timestamp="1581241622544">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

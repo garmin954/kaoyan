@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Index;
 
+use App\Models\School;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+use App\Models\Province;
 
 class IndexController extends Controller
 {
@@ -24,7 +26,8 @@ class IndexController extends Controller
                 $info = Session::get('info');
             }
             return view('index/index/login', [
-                'info' => $info
+                'info' => $info,
+                'province_list' => Province::all(),
             ]);
         }
 
@@ -84,6 +87,24 @@ class IndexController extends Controller
     {
 
         return view('index/wap/error');
+    }
+
+
+    // 获取学校
+    public function getSchool(Request $request)
+    {
+         $ssdm = $request->get('ssdm', 0);
+         // 获取学校
+         $schools = School::where('province_id', $ssdm)->get()->toArray();
+
+         return ['dms'=> $schools];
+    }
+
+    public function getProvince()
+    {
+        // 获取省份
+        $provinces = Province::all()->toarray();
+        return ['dms'=>$provinces];
     }
 
 

@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         'admin/auth/login',
         'apply/cjcx',
         'apply/cjcx/cjcx.do',
-        'ssxscx.do'
+        'ssxscx.do',
+        'jsonToSql'
     ];
 }

@@ -348,7 +348,7 @@
                                         @change="getBkdw"
                                         v-model="formValidate.zsdwss">
                                         <option value="">请选择省市</option>
-
+                                        <option v-for="province in formValidate.zsdwssList" :key="province.id" :value="province.id" >@{{province.province}}</option>
                                     </select>
                                     <div class="ivu-form-item-error-tip">@{{errors.first('yzwb_ssdm')}}</div>
                                 </Form-item>
@@ -364,7 +364,7 @@
                                         @change="clearError('yzwb_bkdwdm')"
                                         v-model="formValidate.bkdwdm">
                                         <option value="">请选择报考单位</option>
-                                        <option v-for="item in bkdwdmArray" :value="item.dm" :key="item.dm">@{{item.dm}}(@{{item.mc}})</option>
+                                        <option v-for="item in bkdwdmArray" :value="item.id" :key="item.id">@{{item.dwmc}}</option>
                                     </select>
                                     <template v-if="bkdwdmArray.length===0 && formValidate.zsdwss!==''">
                                         <div class="select-cover">数据加载中... </div>
@@ -501,12 +501,37 @@
                     zsdwss: '',
                     bkdwdm: '',
                     checkcode: ''
-                }
+                },
+                zsdwssList:[],
             }
         },
         methods: {
+            getSs: function() {
+                var _this = this;
+                _this.loading = true;
+                _this.ssList = [];
+
+                $.ajax({
+                    type: "get",
+                    url: "/apply/code/cjcxss.do",
+                    cache: true,
+                    traditional: true,//防止深度序列化
+                    success: function (response) {
+                        _this.bkdwdmArray = response.dms;
+                        response.dms.map(function(item){
+                            _this.$set(item,'value',item.id);
+                            _this.$set(item,'name',item.province);
+                            _this.ssList.push(item);
+                        })
+                        _this.formValidate.zsdwssList = _this.ssList;
+
+                        console.log(_this.formValidate.zsdwssList);
+                    }
+                })
+            },
             getBkdw:function () {
                 var _this = this;
+
                 if (_this.formValidate.zsdwss!=='') {
                     $.ajax({
                         type: "get",
@@ -550,8 +575,8 @@
             }
         },
         mounted:function() {
-            if (this.formValidate.zsdwss!=='') {
-                this.getBkdw();
+            if (this.formValidate.zsdwss=='') {
+                this.getSs();
             }
         }
     }

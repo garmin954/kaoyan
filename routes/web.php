@@ -20,11 +20,19 @@ Route::get('/', function () {
 //    Route::get('user', 'Admin\QueryController@user')->name('user');
 //});
 
+
+/****************************tools*********************/
+
+Route::any('jsonToSql', 'Tools@jsonToSql');
+
 // 研招网
 Route::get('apply/cjcx', 'Index\IndexController@login');
 ///apply/cjcx/cjcx.do
 Route::any('apply/cjcx/cjcx.do', 'Index\IndexController@score');
 Route::any('apply/cjcx/error','Index\IndexController@errors');
+
+Route::get('/apply/code/cjcxss.do', 'Index\IndexController@getProvince');
+Route::get('/apply/code/cjcxdw.do', 'Index\IndexController@getSchool');
 
 
 // 同济大学

@@ -216,24 +216,24 @@
                 api.asyncAjax('get', '/apply/code/cjcxdw.do',{'params': params }).then(function(data){
                     _this.loading = false;
                     data.dms.map(function(item){
-                        _this.$set(item,'code',item.dm);
-                        _this.$set(item,'name',item.dm+'('+item.mc+')');
+                        _this.$set(item,'code',item.id);
+                        _this.$set(item,'name',item.dwmc);
                         _this.dwList.push(item);
                     })
                 }).catch();
             },
             getSs: function() {
-                // var _this = this;
-                // _this.loading = true;
-                // _this.ssList = [];
-                // api.asyncAjax('get', '/apply/code/cjcxss.do').then(function(data){
-                //     _this.loading = false;
-                //     data.dms.map(function(item){
-                //         _this.$set(item,'code',item.dm);
-                //         _this.$set(item,'name',item.mc);
-                //         _this.ssList.push(item);
-                //     })
-                // }).catch();
+                var _this = this;
+                _this.loading = true;
+                _this.ssList = [];
+                api.asyncAjax('get', '/apply/code/cjcxss.do').then(function(data){
+                    _this.loading = false;
+                    data.dms.map(function(item){
+                        _this.$set(item,'code',item.id);
+                        _this.$set(item,'name',item.province);
+                        _this.ssList.push(item);
+                    })
+                }).catch();
             },
             submitFormAll: function () {
                 if (this.ksbh==='' && this.bkdwdm==='') {
